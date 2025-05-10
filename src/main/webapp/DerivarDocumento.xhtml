@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui" >
+    <h:head>
+        <title>Derivar Documento</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid style="margin: 1% ; padding: 1%;width: 95%">
+                <h1>Derivacion</h1> 
+            </h:panelGrid>
+            <h:panelGrid style=" margin: 1% ; padding: 1%;width: 95%" >
+                <h:panelGrid  style=" width: 80%;" >
+                    <b:inputText  value="#{TramiteBeans.idDocumentoManual}"  label="Ingrese el ID del documento que desea derivar:" ></b:inputText>        
+                </h:panelGrid>
+                <h:panelGrid columns="9"  style= "width: 80%; text-align: center ">
+                   
+                    <b:commandButton  style="width:150px" value="Listar tabla"  action="#{DocuemntoBens.listaDeDocumentos}"  look="info"/>
+                    <h:outputText/>
+                    <h:selectOneMenu style="width:150px" value="#{TramiteBeans.selectedArea}">
+                        <f:selectItem itemLabel="Seleccione Area" itemValue="" />
+                        <f:selectItems value="#{TramiteBeans.listaDeAreas}" />
+                    </h:selectOneMenu>
+                     
+                    <b:commandButton  style="width:150px" value="Derivar Documento" action="#{TramiteBeans.derivarDocumentoManualmente()}" look="success"/>
+                    <h:outputText/>
+                   
+
+                </h:panelGrid>
+                <br/>
+            </h:panelGrid>
+
+            <h:panelGrid style="margin: 1% ; padding: 1%;width: 97%" >
+
+                <b:dataTable value="#{DocuemntoBens.listaDeDocumentos}" 
+                             var="Documento"  selectionMode="single">
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="#"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.documentoId}"></h:outputText>
+                    </b:dataTableColumn>
+
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="Tipo"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.tipo}"></h:outputText>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="Estado"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.estado}"></h:outputText>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="Fecha"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.fecha}"></h:outputText>
+                    </b:dataTableColumn>    
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="# Requisitos"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.requisitos}"></h:outputText>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="TramiteID"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.tramiteid}"></h:outputText>
+                    </b:dataTableColumn>    
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="VenFecha"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.venFecha}"></h:outputText>
+                    </b:dataTableColumn>  
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="Descripcion"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.descripcion}"></h:outputText>
+                    </b:dataTableColumn>  
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="Archivo Adjunto"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.adjunto}"></h:outputText>
+                    </b:dataTableColumn> 
+                    <b:dataTableColumn>
+                        <f:facet name="header">
+                            <h:outputText value="Area Dirigida"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{Documento.areaDirigida}"></h:outputText>
+                    </b:dataTableColumn> 
+                </b:dataTable>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

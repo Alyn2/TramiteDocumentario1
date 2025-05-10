@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Documento</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+       <h:form>
+            <h:panelGrid style="width: 100%;">
+                <h:panelGrid style="margin: 1% ; padding: 1%;width: 95%">
+                    <h1>Documento</h1> 
+                </h:panelGrid>
+                <h:panelGrid style="margin: 2% ; padding: 1%; width: 95% ">
+                    <h:panelGrid  style="width: 45% ">
+                        <h:outputText  value="ID: #{TramiteBeans.idDocumento}" /><br/>
+                        <h:outputText  value="ID: #{TramiteBeans.tramiteID}" /><br/>
+                        <h:outputText  value="Asunto: #{TramiteBeans.asunto}" /><br/>
+                        <h:outputText  value="Tipo: #{TramiteBeans.tipo}" /><br/>
+                        <h:outputText  value="Requisitos:  #{TramiteBeans.requisitos}" /><br/>
+                        <h:outputText  value="Fecha: #{TramiteBeans.fechaActuarDocumento}" /><br/>
+                         <h:outputText  value="Fecha de Vencimiento: #{TramiteBeans.fechaTermino}" /><br/>
+                    <h:panelGrid style="width: 100%; text-align: center">
+                        <b:commandButton style="width:150px" look="success" value="Regresar" action="#{TramiteBeans.listaTramiteUsuario()}"  ></b:commandButton>
+                    </h:panelGrid>
+                    </h:panelGrid>
+                   </h:panelGrid>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

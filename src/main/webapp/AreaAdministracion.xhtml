@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui" >
+    <h:head>
+        <title>Tramite Usuario</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body >
+         <h:form>
+            <h:panelGrid style="margin: 1% ; padding: 1%;width: 95%">
+                <h1>Tramite Validacion Administracion</h1> 
+            </h:panelGrid>
+            <h:panelGrid style=" margin: 1% ; padding: 1%;width: 95%" >
+                <h:panelGrid  style=" width: 80%;" >
+                    <b:inputText  value="#{TramiteBeans.idGeneral}"  label="ID: " ></b:inputText>        
+                </h:panelGrid>
+                <h:panelGrid columns="9"  style= "width: 80%; text-align: center ">
+                    <b:commandButton  style="width:150px" value="Aprobar" action="#{TramiteBeans.aceptado()}" look="success"/>
+                    <h:outputText/>
+                    <b:commandButton  style="width:150px" value="Rechazar" action="#{TramiteBeans.desaprobado()}" look="success"/>
+                    <h:outputText/>
+                    <b:commandButton  style="width:150px" value="Listar tabla"  action="#{TramiteBeans.listarTramiteValidacionContabilidad()}"  look="info"/>
+                    <h:outputText/>
+                    <b:commandButton style="width:150px"  value="Buscar Documento" look="info" action="#{TramiteBeans.irDocumentoValidadcion()}" ></b:commandButton>
+                </h:panelGrid>
+                <br/>
+            </h:panelGrid>
+
+            <h:panelGrid style="margin: 1% ; padding: 1%;width: 97%" >
+
+                <b:dataTable value="#{TramiteBeans.listTablaUsuario2}"
+                         var="tra"  >
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="#"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{tra.idTramite}"></h:outputText>
+                </b:dataTableColumn>
+
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="Fecha Recipcion"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{tra.fechaRecepcion}"></h:outputText>
+                </b:dataTableColumn>
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="Fecha termino"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{tra.fechaTermino}"></h:outputText>
+                </b:dataTableColumn>
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="Observacion"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{tra.observacion}"></h:outputText>
+                </b:dataTableColumn>    
+                    <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="# Documento"></h:outputText>
+                    </f:facet>
+                        <h:outputText value="#{tra.idDocumento}"></h:outputText>
+                </b:dataTableColumn>
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="Validacion"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{tra.estado}"></h:outputText>
+                </b:dataTableColumn>    
+            </b:dataTable>
+            </h:panelGrid>
+         </h:form>
+    </h:body>
+</html>

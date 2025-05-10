@@ -1,0 +1,72 @@
+@charset "ISO-8859-1";
+.item{
+	position: relative;
+	cursor: pointer;
+}
+
+.Contenedor-Foto{
+	position: absolute;
+	margin: 6% 3%;
+}
+
+.fotoUsuario{
+	width: 28%;
+	object-fit:cover;
+	border-radius:10px;
+	background: #f39541;
+}
+
+.contenedor-Nombre{
+	position: absolute;
+	margin: 7% 28%;
+}
+
+.texto-nombre{
+	font-weight: bold;
+	font-size: 90%;
+	font-family: 'Fact Narrow', sans-serif;
+	color: #f39541;
+}
+
+.contenido-cerrar-sesion{
+	position: absolute;
+	margin: 4% 80%;
+}
+
+.contenido-Cargo{
+	position: absolute;
+	margin: 20% 28%;
+}
+
+.texto-cargo{
+	font-size: 50%;
+	font-family: 'Fact Narrow', sans-serif;
+	color: #fff;
+}
+
+.Cerrar-sesion:hover{
+	color: #f39541;
+}
+
+
+.Cerrar-sesion{
+	font-size: 250%;
+	color: white;
+}
+
+.item{
+	color: white;
+	background:  #333333;
+	font-size: 16px;
+	text-decoration: none;
+	display: block;
+	padding: 6px 30px;
+	line-height: 35px;
+}
+
+.item :hover{
+	color: #f39541;
+	background-color: #555;
+	transition:0.3s ease;
+}
+

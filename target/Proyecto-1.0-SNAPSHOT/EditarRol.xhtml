@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div>Editar Rol</div>
+        <h:outputText value="ID: "/><br/>
+        <h:outputText value="#{RolesBenas.id}"/><br/>
+        <h:inputHidden value="#{RolesBenas.id}" ></h:inputHidden>
+            <h:outputText value="Nombre: "/><br/>
+        <h:inputText value="#{RolesBenas.codigo}"/><br/>
+        <br/>
+        <b:commandButton value="Editar Rol" action="#{RolesBenas.editarRol()}" look="success"/>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+      <h:head>
+        <title>Nuevo Tramite</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form enctype="multipart/form-data">
+            <h:panelGrid style="width: 100%;">
+    <h:panelGrid style="margin: 1%; padding: 1%; width: 95%">
+        <h1>Nuevo Tramite</h1>
+    </h:panelGrid>
+    <h:panelGrid style="margin: 2%; padding: 1%; width: 95%">
+        <h:panelGrid style="width: 45%">
+            
+            <h4>Fecha de recepción:</h4>
+            <p:calendar value="#{TramiteBeans.fechaRecepcion}" showOn="button" pattern="yyyy/MM/dd"/>
+            <br/>
+            <b:inputText value="#{TramiteBeans.asunto}" label="Asunto:"/><br/>
+            <b:inputText value="#{TramiteBeans.observacion}" label="Observacion" /><br/>
+           <h4>Selecion el id de la persona que realiza el tramite:</h4>
+           <h:selectOneMenu style="width:190px" value="#{TramiteBeans.selecionarIdPersona}">
+                        <f:selectItem itemLabel="Seleccione IdPersona" itemValue="" />
+                        <f:selectItems value="#{TramiteBeans.listaDeIdPersonas}" />
+            </h:selectOneMenu>
+            <b:inputText value="#{TramiteBeans.cantidaddias}" label="Cantidad Dias" /><br/>
+            <h4>Fecha de término:</h4>
+            <p:calendar value="#{TramiteBeans.fechaTermino}" showOn="button" pattern="yyyy/MM/dd"/>
+            <br/>
+        </h:panelGrid>
+    </h:panelGrid>
+    <hr/>
+    <h:panelGrid style="margin: 1%; padding: 1%; width: 95%">
+        <h1>Nuevo Documento</h1>
+    </h:panelGrid>
+    <h:panelGrid style="margin: 2%; padding: 1%; width: 95%">
+        <h:panelGrid style="width: 45%">
+           
+            <b:inputText value="#{TramiteBeans.tipo}" label="Tipo:"/><br/>
+            <b:inputText value="#{TramiteBeans.estado}" label="Estado"/><br/>
+            <h4>Fecha:</h4>
+            <p:calendar value="#{TramiteBeans.fecha}" showOn="button" pattern="yyyy/MM/dd"/>
+            <br/>
+            <b:inputText value="#{TramiteBeans.requisitos}" label="Requisito: "/><br/>
+            <h4>Fecha de vencimiento:</h4>
+            <p:calendar value="#{TramiteBeans.venfecha}" showOn="button" pattern="yyyy/MM/dd"/>
+            <br/>
+            <b:inputText value="#{TramiteBeans.descripcion}" label="Descripcion: "/><br/>
+            <h4>Adjunte el archivo:</h4>
+            <p:fileUpload value="#{TramiteBeans.adjuntoo}" mode="simple"/><br/>
+            <b:inputText value="#{TramiteBeans.areaDirigida}" label="Area Dirigida:"/><br/>
+            <h:panelGrid style="width: 100%; text-align: center">
+                <b:commandButton style="width:150px" look="success" value="Agregar" action="#{TramiteBeans.guardarDocumento_Tramite()}"  ></b:commandButton>
+            </h:panelGrid>
+        </h:panelGrid>
+    </h:panelGrid>
+</h:panelGrid>
+
+        </h:form>
+    </h:body>
+</html>

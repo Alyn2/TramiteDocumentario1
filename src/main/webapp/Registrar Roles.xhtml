@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      >
+    <h:head>
+        <title>Tramite de Documentacion</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Gestion Rol</h1>    
+            <br/>
+            <b:commandButton value="Agregar Rol" action="#{RolesBenas.irRolNuevo()}" look="success"/>
+            <b:commandButton value="Listar tabla" action="#{RolesBenas.listar()}"  look="success"/>
+            <b:inputText  value="#{RolesBenas.id}"  ></b:inputText>
+            <b:commandButton  value="INHABILITAR" action="#{RolesBenas.ihabilitar()}" ></b:commandButton>
+            <b:commandButton  value="HABILIAR" action="#{RolesBenas.habilitar()}" ></b:commandButton>
+            <b:commandButton  value="Editar" action="#{RolesBenas.ireditar()}" ></b:commandButton>
+            <br/>
+            <br/>
+            <br/>
+
+            <b:dataTable value="#{RolesBenas.list}"
+                         var="rol"  >
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="#"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{rol.idRol}"></h:outputText>
+                </b:dataTableColumn>
+
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="Nombre"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{rol.nombre}"></h:outputText>
+                </b:dataTableColumn>
+                <b:dataTableColumn>
+                    <f:facet name="header">
+                        <h:outputText value="Estado"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{rol.estado}"></h:outputText>
+                </b:dataTableColumn>
+            </b:dataTable>
+        </h:form>
+    </h:body>
+</html>

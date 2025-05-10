@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Menu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+        <link href="./css/styles.css" rel="stylesheet"></link>
+        <link href="./css/styles1.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body styleClass="contenedor">
+        <h:panelGrid styleClass="menu">
+            <h:form>
+                <p:dataList value="#{loginBeans.menuSeleccionado}" var="menu">
+                    <h:link target="iframeContenido" value="#{menu.nombre}" outcome="#{menu.nombre}"/>
+                </p:dataList>
+            </h:form>    
+        </h:panelGrid>
+
+        <div class="datosTrabajador">
+            <div class="contenedor-Nombre">
+                <h5 class="texto-nombre"><h:outputText value="#{loginBeans.nombreCompleto}"/></h5>
+            </div>
+            <div class="contenido-Cargo">
+                <h5 class="texto-cargo"><h:outputText value="#{loginBeans.rol}"/></h5>
+            </div>
+            <div class="contenido-cerrar-sesion">
+                <a href="index.xhtml"  class="Cerrar-sesion">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                </a>
+            </div>
+        </div>
+        <iframe class="contenido" name="iframeContenido" />
+    </h:body>
+</html>
